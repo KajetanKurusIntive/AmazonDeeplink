@@ -1,0 +1,4 @@
+adb shell am start -a android.intent.action.VIEW -d "localnow://player/the-contract" com.amazon.rialto.cordova.webapp.webapp58f7ba22e0b346d9af55652dd3187ba4
+localnow://player/the-contract
+adb shell am start -a android.intent.action.VIEW -d "localnow://player/the-contract" com.amazon.rialto.cordova.webapp.webapp58f7ba22e0b346d9af55652dd3187ba4
+localnow://player/the-contract
