@@ -73,7 +73,7 @@ function AmazonIntentBuilder() {
   return (
     <div className="App">
       <img src={logo} alt="Logo" width="400" height="400" />
-      <h1>Local Now Amazon Deeplink Creator</h1>
+      <h1>Amazon Deeplink Converter</h1>
       <p>Create single deeplink</p>
       <form
         className="intent-form"
@@ -84,7 +84,7 @@ function AmazonIntentBuilder() {
           {...register("intent")}
           placeholder="Android deeplink / intent data"
         />
-        <input className="submit-button" type="submit" value="Submit" />
+        <input className="submit-button" type="submit" value="Convert" />
       </form>
       <div>
         <code>{data}</code>
@@ -92,7 +92,7 @@ function AmazonIntentBuilder() {
       <hr className="divider" />
       <p>
         You can now upload bulk data for conversion by selecting a file using
-        the "Upload Bulk Data" button above.
+        the "Upload Bulk Data" button below.
       </p>
       <div className="file-upload">
         <label htmlFor="file-upload" className="file-upload-label">
