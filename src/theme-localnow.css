@@ -1,0 +1,158 @@
+.App {
+  text-align: center;
+  background: radial-gradient(circle, #4ccd63 0%, #102638 100%); /* Define your gradient */
+  min-height: 100vh;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 3%; /* Ensure the image is a circle */
+  filter: blur(0px); /* Apply a blur effect */
+}
+
+
+/* Styles for FAQ section */
+.faq-section {
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.faq-section h3 {
+  margin-top: 20px;
+}
+
+.faq-section ol {
+  list-style-type: none;
+  padding: 0; /* Remove default padding */
+}
+
+.faq-section ol li {
+  padding-left: 10px; /* Adjust padding for list items */
+}
+
+.faq-section a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.faq-section a:hover {
+  text-decoration: underline;
+}
+
+
+.intent-form {
+  width: 600px; /* Set the form width */
+  margin: 0 auto; /* Center the form */
+}
+
+.intent-textarea {
+  background-color: #102638;
+  color: #ffffff;
+  width: 100%; /* Make the textarea full width */
+  margin-bottom: 10px; /* Add some spacing */
+}
+
+.submit-button {
+  background-color: #102638; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove button border */
+  padding: 10px 20px; /* Add padding */
+  cursor: pointer; /* Add cursor pointer on hover */
+  border-radius: 5px; /* Add border radius */
+  transition: background-color 0.3s ease; /* Add smooth transition */
+}
+
+.submit-button:hover {
+  background-color:  #0b3d4b; /* Change background color on hover */
+  color: #fff; /* Button text color */
+}
+
+.file-upload {
+  margin-top: 20px;
+}
+
+.file-upload-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #102638;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.file-upload-label:hover {
+  background-color:  #0b3d4b; /* Change background color on hover */
+  color: #fff; /* Button text color */
+}
+
+#file-upload {
+  display: none;
+}
+
+.download-button {
+  margin-top: 20px;
+}
+
+.download-button button {
+  padding: 10px 20px;
+  background-color: #39ee64;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.download-button button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+hr.divider {
+  border: none;
+  height: 5px; /* Adjust the height as needed */
+  width: 60%; /* Make the textarea full width */
+  background-color: #2db64d; /* Change the color as needed */
+  margin: 0 auto; /* Adjust the margin as needed */
+}
+
+.carousel-image {
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Ensure aspect ratio is maintained */
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+
+.theme-button {
+  width: 100px; /* Adjust width as needed */
+  height: 100px; /* Adjust height as needed */
+  border: none;
+  background-size: cover;
+  cursor: pointer;
+  margin-right: 10px; /* Adjust margin between buttons */
+}
+
+.theme-button:hover {
+  opacity: 0.8; /* Adjust hover effect as desired */
+}
+
+/* Define background images for each theme button */
+.theme-button.localnow {
+  background-image: url('localnow.png');
+}
+
+.theme-button.twc {
+  background-image: url('twc.jpg');
+}
+
+.theme-button.hbcugo {
+  background-image: url('hbcugo.webp');
+}

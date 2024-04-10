@@ -1,13 +1,21 @@
 import React from 'react';
-import './App.css';
-import AmazonIntentBuilder from './AmazonIntentBuilder'; // Import the AmazonIntentBuilder component
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AmazonIntentBuilder from './AmazonIntentBuilder';
+import './App.css'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <AmazonIntentBuilder />
-    </div>
+    <Router>
+      <div className="App">
+      <Routes>
+          <Route path="/" element={<AmazonIntentBuilder />} />
+          <Route path="/AmazonDeeplink" element={<AmazonIntentBuilder />} />
+          {/* Add other routes if needed */}
+        </Routes>
+        
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

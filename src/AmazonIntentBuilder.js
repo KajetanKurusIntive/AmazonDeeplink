@@ -1,12 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import logo from "./logo.png"; // Import your PNG image
 
 function AmazonIntentBuilder() {
-  console.log("rendering");
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState("");
   const [convertedData, setConvertedData] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Define mapping of themes to ASIN values
+  const themeToAsin = {
+    localnow: "B01MQTVN2T",
+    twc: "B07PNRRTN6",
+    hbcugo: "ASINhbcugo",
+    thegrio: "ASIN4thegrio",
+  };
+
+  const themeToTitle = {
+    localnow: "Local Now",
+    twc: "The Weather Channel",
+    hbcugo: "HBCU GO",
+    thegrio: "The Grio",
+  };
+
+  // Extract theme and ASIN values from URL parameters
+  const searchParams = new URLSearchParams(location.search);
+  let theme = searchParams.get("theme") || "localnow";
+  const asin = searchParams.get("asin") || themeToAsin[theme] || "";
+
+  useEffect(() => {
+    document.documentElement.className = theme;
+  }, [theme]);
 
   const amazonIntentBuilder = (formData) => {
     const { intent } = formData;
@@ -15,7 +41,7 @@ function AmazonIntentBuilder() {
     const match = intent.match(/-d\s+("[^"]*"|[^"'\s]+)/);
     if (match) {
       const value = match[1].replace(/"/g, ""); // Remove quotes from the value
-      const deeplink = `amzns://apps/android?asin=B01MQTVN2T#Intent;S.intentToFwd=${encodeURIComponent(
+      const deeplink = `amzns://apps/android?asin=${asin}#Intent;S.intentToFwd=${encodeURIComponent(
         value
       )};end`;
       setData(deeplink);
@@ -23,7 +49,7 @@ function AmazonIntentBuilder() {
     }
 
     // If "-d" parameter not found, build deeplink using the entire provided string
-    const deeplink = `amzns://apps/android?asin=B01MQTVN2T#Intent;S.intentToFwd=${encodeURIComponent(
+    const deeplink = `amzns://apps/android?asin=${asin}#Intent;S.intentToFwd=${encodeURIComponent(
       intent
     )};end`;
     setData(deeplink);
@@ -42,11 +68,11 @@ function AmazonIntentBuilder() {
         const match = line.match(/-d\s+("[^"]*"|[^"'\s]+)/);
         if (match) {
           const value = match[1].replace(/"/g, ""); // Remove quotes from the value
-          return `amzns://apps/android?asin=B01MQTVN2T#Intent;S.intentToFwd=${encodeURIComponent(
+          return `amzns://apps/android?asin=${asin}#Intent;S.intentToFwd=${encodeURIComponent(
             value
           )};end`;
         } else {
-          return `amzns://apps/android?asin=B01MQTVN2T#Intent;S.intentToFwd=${encodeURIComponent(
+          return `amzns://apps/android?asin=${asin}#Intent;S.intentToFwd=${encodeURIComponent(
             line
           )};end`;
         }
@@ -70,10 +96,39 @@ function AmazonIntentBuilder() {
     element.click();
   };
 
+  const handleThemeChange = (newTheme) => {
+    // Update the theme parameter in the URL and reload the page
+    theme = newTheme;
+    const newAsin = themeToAsin[newTheme] || "";
+    navigate(`/?theme=${newTheme}&asin=${newAsin}`);
+    // Reload the page
+
+    window.location.reload();
+  };
+
   return (
-    <div className="App">
-      <img src={logo} alt="Logo" width="400" height="400" />
-      <h1>Amazon Deeplink Converter</h1>
+    <div className={`App ${theme}`}>
+      <div className="theme-section">
+        <div>
+          <button
+            className="theme-button localnow"
+            onClick={() => handleThemeChange("localnow")}
+          ></button>
+          <button
+            className="theme-button twc"
+            onClick={() => handleThemeChange("twc")}
+          ></button>
+          <button
+            className="theme-button thegrio"
+            onClick={() => handleThemeChange("thegrio")}
+          ></button>
+          <button
+            className="theme-button hbcugo"
+            onClick={() => handleThemeChange("hbcugo")}
+          ></button>
+        </div>
+      </div>
+      <h1>Amazon Deeplink Converter for {themeToTitle[theme]}</h1>
       <p>Create single deeplink</p>
       <form
         className="intent-form"
@@ -117,13 +172,13 @@ function AmazonIntentBuilder() {
         <p>Example Android Deeplink:</p>
         <code>
           adb shell am start -a android.intent.action.VIEW -d
-          "localnow://player/the-contract"
-          com.amazon.rialto.cordova.webapp.webapp58f7ba22e0b346d9af55652dd3187ba4
+          "{theme}://player/the-contract"
+          com.amazon.rialto.cordova.webapp.webapp{theme}
         </code>
         <p>
           Content of <code>-d</code> parameter example:
         </p>
-        <code>localnow://player/the-contract</code>
+        <code>{theme}://player/vod-title</code>
         <h3>How to create and upload bulk data?</h3>
         <p>
           To create a bulk data file, simply list each Deeplink or intent data

@@ -54,14 +54,14 @@ img {
 }
 
 .intent-textarea {
-  background-color: #102638;
+  background-color: #000000;
   color: #ffffff;
   width: 100%; /* Make the textarea full width */
   margin-bottom: 10px; /* Add some spacing */
 }
 
 .submit-button {
-  background-color: #102638; /* Button background color */
+  background-color: #000000; /* Button background color */
   color: #fff; /* Button text color */
   border: none; /* Remove button border */
   padding: 10px 20px; /* Add padding */
@@ -71,7 +71,7 @@ img {
 }
 
 .submit-button:hover {
-  background-color:  #0b3d4b; /* Change background color on hover */
+  background-color:  #000000; /* Change background color on hover */
   color: #fff; /* Button text color */
 }
 
@@ -82,14 +82,14 @@ img {
 .file-upload-label {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #102638;
+  background-color: #000000;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .file-upload-label:hover {
-  background-color:  #0b3d4b; /* Change background color on hover */
+  background-color:  #000000; /* Change background color on hover */
   color: #fff; /* Button text color */
 }
 
@@ -103,8 +103,8 @@ img {
 
 .download-button button {
   padding: 10px 20px;
-  background-color: #39ee64;
-  color: #000000;
+  background-color: #000000;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -117,8 +117,162 @@ img {
 
 hr.divider {
   border: none;
-  height: 5px; /* Adjust the height as needed */
-  width: 60%; /* Make the textarea full width */
-  background-color: #2db64d; /* Change the color as needed */
-  margin: 0 auto; /* Adjust the margin as needed */
+  height: 3px; /* Adjust the height as needed */
+  width: 50%; /* Make the textarea full width */
+  background-color: #000000; /* Change the color as needed */
+  margin: 10px auto; /* Adjust the margin as needed */
+  opacity: 0.2;
 }
+
+.carousel-image {
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Ensure aspect ratio is maintained */
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+
+.theme-button {
+  width: 100px; /* Adjust width as needed */
+  height: 100px; /* Adjust height as needed */
+  border: none;
+  background-size: cover;
+  cursor: pointer;
+  margin-right: 10px; /* Adjust margin between buttons */
+}
+
+.theme-button:hover {
+  opacity: 0.8; /* Adjust hover effect as desired */
+}
+
+/* Define background images for each theme button */
+.theme-button.localnow {
+  background-image: url('localnow.png');
+}
+
+.theme-button.twc {
+  background-image: url('twc.jpg');
+}
+
+.theme-button.hbcugo {
+  background-image: url('hbcugo.webp');
+}
+
+
+/* LocalNow Theme */
+.App.localnow {
+  text-align: center;
+  min-height: 100vh;
+  background: radial-gradient(circle, #4ccd63 0%, #102638 100%);
+}
+
+/* TWC Theme */
+.App.twc {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #254aa5); /* Gradient background */
+}
+
+/* HBCUGO Theme */
+.App.hbcugo {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f4b72a, #88459b); /* Gradient background */
+}
+
+/* THE GRIO Theme */
+.App.thegrio {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom left, rgb(255, 255, 255), #01bdb9); /* Gradient background */
+}
+
+/* Common Styles */
+
+/* Styles for FAQ section */
+.faq-section {
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for buttons */
+.theme-button {
+  width: 140px;
+  height: 140px;
+  border: none;
+  background-size: cover;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.theme-button:hover {
+  opacity: 0.8;
+}
+
+/* Define background images for each theme button */
+.theme-button.localnow {
+  background-image: url('localnow.png');
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.theme-button.twc {
+  background-image: url('twc.jpg');
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.theme-button.hbcugo {
+  background-image: url('hbcugo.webp');
+  background-color: transparent;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.theme-button.thegrio {
+  background-image: url('thegrio.jpg');
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+/* Define transition for smooth effect */
+.theme-button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Enlarge the image on focus */
+.theme-button.localnow:hover {
+  transform: scale(1.2);
+}
+
+.theme-button.twc:hover  {
+  transform: scale(1.2);
+}
+
+.theme-button.hbcugo:hover  {
+  transform: scale(1.2);
+}
+
+.theme-button.thegrio:hover  {
+  transform: scale(1.2);
+}
+
+/* Add a frame to the selected image */
+.theme-button.localnow.selected {
+  box-shadow: 0 0 0 3px #ffbf00; /* Adjust the color and size of the frame */
+  transform: scale(1.1); /* Enlarge the selected image */
+}
+
+.theme-button.twc.selected {
+  box-shadow: 0 0 0 3px #ffbf00; /* Adjust the color and size of the frame */
+  transform: scale(1.1); /* Enlarge the selected image */
+}
+
+.theme-button.hbcugo.selected {
+  box-shadow: 0 0 0 3px #ffbf00; /* Adjust the color and size of the frame */
+  transform: scale(1.1); /* Enlarge the selected image */
+}
+
+
