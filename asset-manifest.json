@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/AmazonDeeplink/static/css/main.44867827.css",
-    "main.js": "/AmazonDeeplink/static/js/main.635ebcbd.js",
+    "main.css": "/AmazonDeeplink/static/css/main.70c94923.css",
+    "main.js": "/AmazonDeeplink/static/js/main.c99c48ed.js",
     "static/js/787.e0fedcc6.chunk.js": "/AmazonDeeplink/static/js/787.e0fedcc6.chunk.js",
+    "static/media/localnow.png": "/AmazonDeeplink/static/media/localnow.4ba40d822b392393d4d3.png",
     "static/media/logo.png": "/AmazonDeeplink/static/media/logo.4ba40d822b392393d4d3.png",
+    "static/media/hbcugo.webp": "/AmazonDeeplink/static/media/hbcugo.7b1a5a9f9aca6b6b2191.webp",
+    "static/media/twc.jpg": "/AmazonDeeplink/static/media/twc.cbb3fbafe934b440bfc1.jpg",
+    "static/media/thegrio.jpg": "/AmazonDeeplink/static/media/thegrio.e52c3bcf97e57cd2e0e5.jpg",
     "index.html": "/AmazonDeeplink/index.html",
-    "main.44867827.css.map": "/AmazonDeeplink/static/css/main.44867827.css.map",
-    "main.635ebcbd.js.map": "/AmazonDeeplink/static/js/main.635ebcbd.js.map",
+    "main.70c94923.css.map": "/AmazonDeeplink/static/css/main.70c94923.css.map",
+    "main.c99c48ed.js.map": "/AmazonDeeplink/static/js/main.c99c48ed.js.map",
     "787.e0fedcc6.chunk.js.map": "/AmazonDeeplink/static/js/787.e0fedcc6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.44867827.css",
-    "static/js/main.635ebcbd.js"
+    "static/css/main.70c94923.css",
+    "static/js/main.c99c48ed.js"
   ]
 }
